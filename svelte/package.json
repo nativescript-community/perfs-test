@@ -1,0 +1,27 @@
+{
+  "name": "svelte",
+  "main": "app/app.ts",
+  "version": "1.0.0",
+  "scripts": {
+    "run.android.production": "devns run android --release --clean --key-store-path ./certs/upload.keystore --key-store-password nativescript --key-store-alias nativescript --key-store-alias-password nativescript --env.noconsole",
+    "run.android.timeline": "devns run android --config=nativescript.config.timeline.js --release --clean --key-store-path ./certs/upload.keystore --key-store-password nativescript --key-store-alias nativescript --key-store-alias-password nativescript --env.timeline"
+  },
+  "dependencies": {
+    "@akylas/nativescript": "^8.3.6",
+    "@nativescript/core": "~8.3.5",
+    "svelte-native": "~1.0.4"
+  },
+  "devDependencies": {
+    "@nativescript/android": "8.4.0-alpha.6",
+    "@nativescript/types": "~8.3.0",
+    "@nativescript/webpack": "~5.0.9",
+    "merge-options": "^3.0.4",
+    "merge-properties-files": "^1.1.6",
+    "string-replace-loader": "^3.1.0",
+    "svelte": "~3.52.0",
+    "svelte-loader": "^3.1.3",
+    "svelte-native-preprocessor": "^1.0.0",
+    "svelte-preprocess": "^4.10.7",
+    "typescript": "~4.7.4"
+  }
+}

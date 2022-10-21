@@ -1,0 +1,82 @@
+
+def BUILD_TOOLS_PATH = "$rootDir/build-tools"
+
+android {
+  compileSdkVersion 33
+  // buildToolsVersion "32.0.0"
+  // ndkVersion ""
+
+  defaultConfig {
+    minSdkVersion 17
+    targetSdkVersion 33
+
+    // Version Information
+    versionCode 1
+    versionName "1.0.0"
+    
+    generatedDensities = []
+  }
+
+  aaptOptions {
+    additionalParameters "--no-version-vectors"
+  }
+  compileOptions {
+      // Flag to enable support for the new language APIs
+      coreLibraryDesugaringEnabled false
+      sourceCompatibility JavaVersion.VERSION_11
+      targetCompatibility JavaVersion.VERSION_11
+  }
+  lintOptions {
+      checkReleaseBuilds false
+      // Or, if you prefer, you can continue to check for errors in release builds,
+      // but continue the build even when errors are found:
+      abortOnError false
+  }
+  buildTypes { // THIS CAUSES RELEASE MODE ERROR ON APP LAUNCH
+    release {
+      multiDexEnabled false
+      // Enables code shrinking, obfuscation, and optimization for only
+      // your project's release build type.
+      minifyEnabled true
+
+      // Enables resource shrinking, which is performed by the
+      // Android Gradle plugin.
+      shrinkResources true
+
+      // resConfigs "en", "fr"
+
+      // Includes the default ProGuard rules files that are packaged with
+      // the Android Gradle plugin. To learn more, go to the section about
+      // R8 configuration files.
+      def absolutePathToAppResources = getAppResourcesPath()
+      proguardFiles getDefaultProguardFile(
+        'proguard-android-optimize.txt'),
+        "$BUILD_TOOLS_PATH/proguard-rules.pro"
+
+      debuggable false
+      jniDebuggable false
+      renderscriptDebuggable false
+    }
+    debug {
+      // multiDexEnabled true
+    }
+  }
+}
+
+task createProguard {
+    dependsOn 'buildMetadata'
+    doLast {
+        exec {
+            workingDir "$USER_PROJECT_ROOT"
+            commandLine 'node', 'scripts/createProguard.js'
+        }
+    }
+}
+tasks.whenTaskAdded({ DefaultTask currentTask ->
+    if (currentTask =~ /buildMetadata/) {
+        currentTask.finalizedBy(createProguard)
+    }
+    if (currentTask =~ /minify.*WithR8/) {
+        currentTask.dependsOn(createProguard)
+    }
+})
