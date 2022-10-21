@@ -1,7 +1,7 @@
 <template>
     <ScrollView>
         <WrapLayout>
-            <Label v-for="index in 2000" :key="index" :text="text[index]" :disableCss="disableCss"/>
+            <Label v-for="index in 2000" :key="index" :text="text[index - 1]" :disableCss="disableCss"/>
         </WrapLayout>
     </ScrollView>
 </template>
