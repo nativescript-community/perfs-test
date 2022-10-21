@@ -1,0 +1,27 @@
+{
+  "name": "singui",
+  "main": "app/app.ts",
+  "version": "1.0.0",
+  "scripts": {
+    "run.android.production": "devns run android --release --clean --key-store-path ./certs/upload.keystore --key-store-password nativescript --key-store-alias nativescript --key-store-alias-password nativescript --env.noconsole",
+    "run.android.timeline": "devns run android --config=nativescript.config.timeline.js --release --clean --key-store-path ./certs/upload.keystore --key-store-password nativescript --key-store-alias nativescript --key-store-alias-password nativescript --env.timeline"
+  },
+  "dependencies": {
+    "@akylas/nativescript": "^8.3.6",
+    "@nativescript/core": "~8.3.5",
+    "@nativescript/theme": "~3.0.2",
+    "dominative": "^0.0.5-alpha.2",
+    "singui": "^0.3.3",
+    "undom-ng": "^1.0.0"
+  },
+  "devDependencies": {
+    "@nativescript/android": "8.4.0-alpha.6",
+    "@nativescript/types": "~8.3.1",
+    "@nativescript/webpack": "~5.0.9",
+    "@types/node": "~18.11.3",
+    "merge-options": "^3.0.4",
+    "merge-properties-files": "^1.1.6",
+    "string-replace-loader": "^3.1.0",
+    "typescript": "~4.7.4"
+  }
+}
