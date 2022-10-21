@@ -1,11 +1,19 @@
 import { NativeScriptConfig } from '@nativescript/core';
 
 export default {
-  id: 'org.nativescript.angular',
+  id: 'org.nativescript.angular.perfs',
   appPath: 'src',
   appResourcesPath: 'App_Resources',
   android: {
-    v8Flags: '--expose_gc',
-    markingMode: 'none'
-  }
+    codeCache: true,
+    markingMode: 'none',
+    enableTimers: true
+  },
+  cssParser: 'rework',
+  hooks: [
+      {
+          type: 'after-prepareNativeApp',
+          script: 'scripts/after-prepareNativeApp.js'
+      }
+  ]
 } as NativeScriptConfig;

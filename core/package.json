@@ -1,0 +1,20 @@
+{
+  "name": "core",
+  "main": "app/app.ts",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@akylas/nativescript": "^8.3.6",
+    "@nativescript/core": "~8.3.5",
+    "@nativescript/theme": "~3.0.2"
+  },
+  "devDependencies": {
+    "@nativescript/android": "8.4.0-alpha.6",
+    "@nativescript/types": "~8.3.1",
+    "@nativescript/webpack": "~5.0.9",
+    "merge-options": "^3.0.4",
+    "merge-properties-files": "^1.1.6",
+    "string-replace-loader": "^3.1.0",
+    "typescript": "4.7.4"
+  }
+}

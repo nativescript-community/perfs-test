@@ -6,7 +6,8 @@ export default {
   appResourcesPath: 'App_Resources',
   android: {
     codeCache: true,
-    markingMode: 'none'
+    markingMode: 'none',
+    enableTimers: true
   },
   cssParser: 'rework',
   hooks: [
