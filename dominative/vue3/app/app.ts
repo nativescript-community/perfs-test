@@ -13,8 +13,9 @@ registerComponents(app);
 
 Application.run({
   create: () => {
-    document.documentElement.actionBarHidden = true;
-    app.mount(document.documentElement);
-    return document;
+    const root = document.createElement('ScrollView')
+    // document.documentElement.actionBarHidden = true;
+    app.mount(root);
+    return root;
   },
 });
