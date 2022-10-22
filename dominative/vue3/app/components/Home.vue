@@ -12,9 +12,7 @@ There are many variations of passages of Lorem Ipsum available, but the majority
 </script>
 
 <template>
-  <ScrollView>
-    <WrapLayout>
-      <Label v-for="(n, index) in 2000" :key="index" :text="text[index]" :disableCss="disableCss"/>
-    </WrapLayout>
-  </ScrollView>
+  <WrapLayout>
+    <Label v-for="(n, index) in 2000" :key="index" :text="text[index]" :disableCss="disableCss"/>
+  </WrapLayout>
 </template>

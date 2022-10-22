@@ -30,9 +30,9 @@ const App = () => {
 };
 
 const create = () => {
-  document.documentElement.actionBarHidden = true;
-  render(App, document.documentElement);
-  return document;
+  const root = document.createElement('ScrollView')
+  render(App, root);
+  return root;
 };
 
 Application.run({ create });
