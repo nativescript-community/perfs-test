@@ -32,7 +32,7 @@ android {
       // but continue the build even when errors are found:
       abortOnError false
   }
-  buildTypes { // THIS CAUSES RELEASE MODE ERROR ON APP LAUNCH
+  buildTypes {
     release {
       multiDexEnabled false
       // Enables code shrinking, obfuscation, and optimization for only

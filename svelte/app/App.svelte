@@ -1,20 +1,99 @@
 <script lang="ts">
-  const disableCss = __DISABLE_CSS__;
-  const text = `What is Lorem Ipsum?
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-Why do we use it?
-It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
-Where does it come from?
-Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
-Where can I get some?
-There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.`;
+    import { ObservableArray } from '@nativescript/core';
+    import { Template } from 'svelte-native/components';
+
+    const itemsData = require('~/assets/data.json');
+    let items: ObservableArray<any> = null;
+
+    function onItemTap({ index, item }) {
+        console.log(`EVENT TRIGGERED: Tapped on ${index} ${item.name}`);
+    }
+    // function onLoadMoreItems() {
+    //     console.log('EVENT TRIGGERED: onLoadMoreItems()');
+    //     items.push(...items);
+    // }
+
+    function refresh() {
+        items = new ObservableArray(itemsData.products);
+    }
+    refresh();
 </script>
 
-  <scrollView>
-    <wrapLayout>
-      {#each Array(2000) as _, index}
-        <label text={text[index]} {disableCss} />
-      {/each}
-    </wrapLayout>
-  </scrollView>
+<page>
+    <gridlayout>
+        <collectionView {items} rowHeight={80}>
+            <Template let:item>
+                <gridlayout backgroundColor="white" columns={'16,auto,*,auto,16'} rippleColor="green" rows={'auto,*,auto'} on:tap={(e) => console.log(item)}>
+                    <label
+                        id="leftIcon"
+                        class="mdi"
+                        col={0}
+                        color={'red'}
+                        fontSize={24}
+                        horizontalAlignment="left"
+                        marginRight={16}
+                        rowSpan={5}
+                        text={item.icon}
+                        textAlignment="left"
+                        verticalAlignment="middle"
+                        visibility={!!item.icon ? 'visible' : 'collapsed'} />
+                    <image
+                        backgroundColor="gray"
+                        borderRadius={20}
+                        col={1}
+                        height={40}
+                        marginRight={16}
+                        row={1}
+                        rowSpan={3}
+                        src={item.thumbnail}
+                        stretch="aspectFill"
+                        verticalAlignment="center"
+                        visibility={item.thumbnail ? 'visible' : 'hidden'}
+                        width={40} />
+
+                    <stacklayout backgroundColor="yellow" col={2} row={1} rowSpan={3} verticalAlignment="center">
+                        <label
+                            id="overline"
+                            backgroundColor="green"
+                            col={2}
+                            color={'black'}
+                            fontSize={10}
+                            row={1}
+                            text={item.overText}
+                            textTransform="uppercase"
+                            textWrap={true}
+                            verticalAlignment="center"
+                            visibility={!!item.overText ? 'visible' : 'collapsed'} />
+                        <label id="title" color={'black'} fontSize={17} fontWeight="600" lineBreak="end" maxLines={2} text={item.title} textWrap={false} verticalTextAlignment="top" />
+                        <label
+                            id="subtitle"
+                            backgroundColor="red"
+                            color={'darkgray'}
+                            fontSize={14}
+                            lineBreak="end"
+                            maxLines={2}
+                            text={item.description}
+                            textWrap={true}
+                            verticalTextAlignment="top"
+                            visibility={!!item.description ? 'visible' : 'collapsed'} />
+                    </stacklayout>
+
+                    <label col={3} fontSize={10} text={item.rating} verticalAlignment="top" visibility={!!item.rating ? 'visible' : 'hidden'} />
+                    <gridlayout col={3} columns="auto" row={1} rowSpan={2} verticalAlignment="center">
+                        <label
+                            id="rightIcon"
+                            color={'red'}
+                            fontSize={24}
+                            text={item.rightIcon}
+                            textAlignment="right"
+                            verticalAlignment="center"
+                            visibility={!!item.rightIcon ? 'visible' : 'collapsed'} />
+                        <button id="rightButton" text={item.rightButton} verticalAlignment="center" visibility={!!item.rightButton ? 'visible' : 'collapsed'} />
+                    </gridlayout>
+
+                    <absolutelayout id="border" backgroundColor="gray" colSpan={5} height={1} marginLeft={20} row={3} verticalAlignment="bottom" />
+                </gridlayout>
+            </Template>
+        </collectionView>
+    </gridlayout>
+</page>

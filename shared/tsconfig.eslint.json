@@ -1,0 +1,10 @@
+{
+    "extends": "./tsconfig.json",
+    "include": ["../**/*", "./references.d.ts", "../references.d.ts", "../**/.eslintrc.js", "../**/*.d.ts"],
+    "references": [
+        {
+            //Need for IDE
+            "path": "../tsconfig.vue3.json"
+        }
+    ]
+}

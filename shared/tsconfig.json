@@ -1,0 +1,33 @@
+{
+    "compilerOptions": {
+        "target": "es2020",
+        "module": "esnext",
+        "moduleResolution": "node",
+        "removeComments": false,
+        "noLib": false,
+        "emitDecoratorMetadata": false,
+        "experimentalDecorators": true,
+        "lib": ["ESNext", "dom"],
+        "sourceMap": true,
+        "pretty": true,
+        "jsx": "react",
+        "allowUnreachableCode": false,
+        "allowUnusedLabels": false,
+        "noEmitHelpers": true,
+        "noEmitOnError": false,
+        "noImplicitAny": false,
+        "noImplicitReturns": true,
+        "noFallthroughCasesInSwitch": true,
+        "skipDefaultLibCheck": true,
+        "allowSyntheticDefaultImports": true,
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
+        "types": ["node", "svelte", "vue", "svelte-native"],
+        "skipLibCheck": true,
+        "baseUrl": "../",
+        "plugins": [{ "transform": "@nativescript/webpack/dist/transformers/NativeClass", "type": "raw" }]
+    },
+    "include": ["../**/*", "./references.d.ts", "../references.d.ts"],
+    "exclude": ["node_modules"],
+    "compileOnSave": false
+}

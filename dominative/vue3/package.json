@@ -3,28 +3,28 @@
   "main": "app/app.ts",
   "version": "1.0.0",
   "scripts": {
-    "run.android.production": "devns run android --release --clean --key-store-path ./certs/upload.keystore --key-store-password nativescript --key-store-alias nativescript --key-store-alias-password nativescript --env.noconsole",
-    "run.android.timeline": "devns run android --config=nativescript.config.timeline.js --release --clean --key-store-path ./certs/upload.keystore --key-store-password nativescript --key-store-alias nativescript --key-store-alias-password nativescript --env.timeline"
+    "run.android.production": "ns run android --release --clean --key-store-path ../../certs/upload.keystore --key-store-password nativescript --key-store-alias nativescript --key-store-alias-password nativescript --env.noconsole",
+    "run.android.timeline": "ns run android --config=nativescript.config.timeline.js --release --clean --key-store-path ../../certs/upload.keystore --key-store-password nativescript --key-store-alias nativescript --key-store-alias-password nativescript --env.timeline"
   },
   "dependencies": {
-    "@akylas/nativescript": "^8.3.6",
-    "@dominative/vue": "^0.0.2-alpha.1",
-    "@nativescript/core": "~8.3.5",
+    "@akylas/nativescript": "^8.5.10",
+    "@dominative/vue": "0.0.6-alpha.1",
+    "@nativescript/core": "~8.5.9",
     "@nativescript/theme": "~3.0.2",
-    "dominative": "^0.0.5-alpha.2",
-    "undom-ng": "^1.0.0",
-    "vue": "^3.2.41"
+    "dominative": "0.0.9-alpha.2",
+    "undom-ng": "^1.0.10",
+    "vue": "^3.3.4"
   },
   "devDependencies": {
-    "@nativescript/android": "8.4.0-alpha.6",
-    "@nativescript/types": "~8.3.1",
-    "@nativescript/webpack": "~5.0.9",
-    "@types/node": "~18.11.3",
-    "@vue/compiler-sfc": "^3.2.41",
+    "@nativescript/android": "8.5.1",
+    "@nativescript/types": "~8.5.0",
+    "@nativescript/webpack": "~5.0.17",
+    "@types/node": "~20.4.10",
+    "@vue/compiler-sfc": "^3.3.4",
     "merge-options": "^3.0.4",
     "merge-properties-files": "^1.1.6",
     "string-replace-loader": "^3.1.0",
-    "typescript": "~4.7.4",
-    "vue-loader": "^17.0.0"
+    "typescript": "~4.8.4",
+    "vue-loader": "^17.2.2"
   }
 }

@@ -1,26 +1,35 @@
 {
-  "compilerOptions": {
-    "strict": true,
-    "target": "es2019",
-    "module": "esnext",
-    "moduleResolution": "node",
-    "lib": ["esnext", "es2017", "dom"],
-    "sourceMap": true,
-    "noEmitHelpers": true,
-    "importHelpers": true,
-    "baseUrl": ".",
-    "paths": {
-      "~/*": ["app/*"],
-      "@/*": ["app/*"]
+    "extends": "../tsconfig",
+    "compilerOptions": {
+        "target": "es2020",
+        "module": "esnext",
+        "moduleResolution": "node",
+        "declaration": false,
+        "removeComments": true,
+        "emitDecoratorMetadata": false,
+        "experimentalDecorators": true,
+        "sourceMap": true,
+        "skipLibCheck": true,
+        "skipDefaultLibCheck": true,
+        "allowUnreachableCode": false,
+        "allowSyntheticDefaultImports": true,
+        "allowUnusedLabels": false,
+        "noEmitHelpers": true,
+        "noEmitOnError": false,
+        "noImplicitAny": false,
+        "noImplicitReturns": false,
+        "noImplicitUseStrict": false,
+        "noFallthroughCasesInSwitch": true,
+        "resolveJsonModule": true,
+        "lib": ["esnext", "es2017", "dom"],
+        "types": ["node", "svelte-native", "svelte"],
+        "baseUrl": ".",
+        "paths": {
+            "~/*": ["app/*"],
+            "@/*": ["app/*"],
+            "@shims/*": ["../shared/shims/*"]
+        }
     },
-    "typeRoots": ["types"],
-    "types": ["node"],
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "skipLibCheck": true
-  },
-  "include": ["app", "types"],
-  "exclude": ["node_modules", "platforms"]
+    "include": ["app/**/*", "typings/*.d.ts", "types/*.d.ts", "../shared/shims"],
+    "exclude": ["node_modules", "platforms"]
 }

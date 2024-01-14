@@ -1,6 +1,5 @@
 const sveltePreprocess = require('svelte-preprocess');
 // const svelteNativePreprocessor = require('svelte-native-preprocessor');
-
 module.exports = {
     compilerOptions: {
         namespace: 'foreign'
@@ -9,7 +8,7 @@ module.exports = {
         sveltePreprocess({
             typescript: {
                 compilerOptions: {
-                    target: 'es2019'
+                    target: 'es2020'
                 }
             }
         })

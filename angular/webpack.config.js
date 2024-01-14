@@ -14,7 +14,7 @@ module.exports = (env) => {
         console.log('using Akylas fork');
         coreModulesPackageName = '@akylas/nativescript';
         config.resolve.modules = [resolve(__dirname, `node_modules/${coreModulesPackageName}`), resolve(__dirname, 'node_modules')];
-    
+
         // config.resolve.symlinks = false;
         Object.assign(config.resolve.alias, {
             '@nativescript/core': `${coreModulesPackageName}`,
@@ -22,20 +22,20 @@ module.exports = (env) => {
         });
         const nativescriptReplace = '(NativeScript[\\/]dist[\\/]packages[\\/]core|@nativescript/core)';
 
-        config.plugins.push(
-            new webpack.NormalModuleReplacementPlugin(/accessibility$/, (resource) => {
-                if (resource.context.match(nativescriptReplace)) {
-                    resource.request = '~/shims/accessibility';
-                }
-            })
-        );
-        config.plugins.push(
-            new webpack.NormalModuleReplacementPlugin(/action-bar$/, (resource) => {
-                if (resource.context.match(nativescriptReplace)) {
-                    resource.request = '~/shims/action-bar';
-                }
-            })
-        );
+        // config.plugins.push(
+        //     new webpack.NormalModuleReplacementPlugin(/accessibility$/, (resource) => {
+        //         if (resource.context.match(nativescriptReplace)) {
+        //             resource.request = '~/shims/accessibility';
+        //         }
+        //     })
+        // );
+        // config.plugins.push(
+        //     new webpack.NormalModuleReplacementPlugin(/action-bar$/, (resource) => {
+        //         if (resource.context.match(nativescriptReplace)) {
+        //             resource.request = '~/shims/action-bar';
+        //         }
+        //     })
+        // );
         if (!!env.production && !env.timeline) {
             console.log('removing N profiling');
             config.plugins.push(
@@ -97,7 +97,6 @@ module.exports = (env) => {
             );
         }
     }
-    
 
     config.optimization.minimize = env.production;
     config.optimization.minimizer = [
@@ -108,7 +107,7 @@ module.exports = (env) => {
                 module: true,
                 toplevel: false,
                 keep_classnames: platform !== 'android',
-                keep_fnames:  platform !== 'android',
+                keep_fnames: platform !== 'android',
                 output: {
                     comments: false,
                     semicolons: false
@@ -138,7 +137,7 @@ module.exports = (env) => {
         __UI_USE_EXTERNAL_RENDERER__: true,
         __UI_USE_XML_PARSER__: false,
         'global.__AUTO_REGISTER_UI_MODULES__': false,
-        __DISABLE_CSS__ :env.disablecss
+        __DISABLE_CSS__: env.disablecss
     };
     Object.assign(config.plugins.find((p) => p.constructor.name === 'DefinePlugin').definitions, defines);
     config.plugins.unshift(
@@ -153,10 +152,10 @@ module.exports = (env) => {
         })
     );
     config.plugins.push(new IgnoreNotFoundExportPlugin());
- 
+
     config.plugins.push(new webpack.IgnorePlugin({ resourceRegExp: /reduce-css-calc$/ }));
     config.plugins.push(new webpack.IgnorePlugin({ resourceRegExp: /punnycode$/ }));
     config.plugins.push(new webpack.IgnorePlugin({ resourceRegExp: /^url$/ }));
-    
+
     return config;
 };

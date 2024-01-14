@@ -3,32 +3,36 @@
   "main": "./src/main.ts",
   "version": "1.0.0",
   "private": true,
+  "scripts": {
+    "run.android.production": "ns run android --release --clean --key-store-path ../certs/upload.keystore --key-store-password nativescript --key-store-alias nativescript --key-store-alias-password nativescript --env.noconsole",
+    "run.android.timeline": "ns run android --config=nativescript.config.timeline.js --release --clean --key-store-path ../certs/upload.keystore --key-store-password nativescript --key-store-alias nativescript --key-store-alias-password nativescript --env.timeline"
+  },
   "dependencies": {
-    "@akylas/nativescript": "^8.3.6",
-    "@angular/animations": "~14.2.0",
-    "@angular/common": "~14.2.0",
-    "@angular/compiler": "~14.2.0",
-    "@angular/core": "~14.2.0",
-    "@angular/forms": "~14.2.0",
-    "@angular/platform-browser": "~14.2.0",
-    "@angular/platform-browser-dynamic": "~14.2.0",
-    "@angular/router": "~14.2.0",
-    "@nativescript/angular": "~14.2.0",
-    "@nativescript/core": "~8.3.0",
+    "@akylas/nativescript": "^8.5.10",
+    "@angular/animations": "~16.2.0",
+    "@angular/common": "~16.2.0",
+    "@angular/compiler": "~16.2.0",
+    "@angular/core": "~16.2.0",
+    "@angular/forms": "~16.2.0",
+    "@angular/platform-browser": "~16.2.0",
+    "@angular/platform-browser-dynamic": "~16.2.0",
+    "@angular/router": "~16.2.0",
+    "@nativescript/angular": "~16.0.0",
+    "@nativescript/core": "~8.5.9",
     "@nativescript/theme": "~3.0.2",
-    "rxjs": "~7.5.0",
-    "zone.js": "~0.11.5"
+    "rxjs": "~7.8.1",
+    "zone.js": "~0.13.1"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~14.2.0",
-    "@angular/compiler-cli": "~14.2.0",
-    "@nativescript/android": "8.4.0-alpha.6",
-    "@nativescript/types": "~8.3.1",
-    "@nativescript/webpack": "~5.0.9",
-    "@ngtools/webpack": "~14.2.0",
+    "@angular-devkit/build-angular": "~16.2.0",
+    "@angular/compiler-cli": "~16.2.0",
+    "@nativescript/android": "8.5.1",
+    "@nativescript/types": "~8.5.0",
+    "@nativescript/webpack": "~5.0.17",
+    "@ngtools/webpack": "~16.2.0",
     "merge-options": "^3.0.4",
     "merge-properties-files": "^1.1.6",
     "string-replace-loader": "^3.1.0",
-    "typescript": "~4.7.4"
+    "typescript": "~4.8.4"
   }
 }

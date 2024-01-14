@@ -1,0 +1,13 @@
+{
+    "extends": "./shared/tsconfig",
+    "compilerOptions": {
+        "paths": {
+        }
+    },
+    "references": [
+        {
+            //Need for IDE
+            "path": "./tsconfig.vue3.json"
+        }
+    ]
+}
