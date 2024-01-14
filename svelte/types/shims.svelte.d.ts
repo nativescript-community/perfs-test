@@ -2,7 +2,6 @@ declare module 'svelte/internal' {
     export function get_current_component();
 }
 
-
 // eslint-disable-next-line @typescript-eslint/no-unnecessary-qualifier
 declare namespace svelteNative.JSX {
     type Override<What, With> = Omit<What, keyof With> & With;

@@ -2,7 +2,7 @@
     import { ObservableArray } from '@nativescript/core';
     import { Template } from 'svelte-native/components';
 
-    const itemsData = require('~/assets/data.json');
+    const itemsData = require('@shared/assets/data.json');
     let items: ObservableArray<any> = null;
 
     function onItemTap({ index, item }) {

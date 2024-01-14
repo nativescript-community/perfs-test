@@ -7,18 +7,18 @@
     "run.android.timeline": "ns run android --config=nativescript.config.timeline.js --release --clean --key-store-path ../../certs/upload.keystore --key-store-password nativescript --key-store-alias nativescript --key-store-alias-password nativescript --env.timeline"
   },
   "dependencies": {
-    "@akylas/nativescript": "^8.5.10",
-    "@nativescript/core": "~8.5.9",
+    "@akylas/nativescript": "8.6.2",
     "@nativescript/theme": "~3.0.2",
-    "dominative": "0.0.9-alpha.2",
+    "dominative": "0.1.1",
     "singui": "^0.3.7",
-    "undom-ng": "^1.0.10"
+    "undom-ng": "^1.1.1"
   },
   "devDependencies": {
-    "@nativescript/android": "8.5.1",
-    "@nativescript/types": "~8.5.0",
-    "@nativescript/webpack": "~5.0.17",
-    "@types/node": "~20.4.10",
+    "@nativescript/core": "8.6.2",
+    "@nativescript/android": "8.6.2",
+    "@nativescript/types": "~8.6.1",
+    "@nativescript/webpack": "~5.0.18",
+    "@types/node": "~20.11.0",
     "merge-options": "^3.0.4",
     "merge-properties-files": "^1.1.6",
     "string-replace-loader": "^3.1.0",

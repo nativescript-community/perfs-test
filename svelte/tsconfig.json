@@ -27,7 +27,7 @@
         "paths": {
             "~/*": ["app/*"],
             "@/*": ["app/*"],
-            "@shims/*": ["../shared/shims/*"]
+            "@shared/*": ["../shared/*"]
         }
     },
     "include": ["app/**/*", "typings/*.d.ts", "types/*.d.ts", "../shared/shims"],

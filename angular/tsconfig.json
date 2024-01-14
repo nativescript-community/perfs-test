@@ -11,11 +11,11 @@
     "lib": ["es2017", "dom"],
     "baseUrl": ".",
     "paths": {
-      "~/*": ["src/*"],
-      "@/*": ["src/*"]
+      "~/*": ["app/*"],
+      "@/*": ["app/*"]
     }
   },
-  "include": ["src/tests/**/*.ts", "src/**/*.ios.ts", "src/**/*.android.ts"],
-  "files": ["./src/main.ts", "./references.d.ts", "./src/polyfills.ts"],
+  "include": ["app/tests/**/*.ts", "app/**/*.ios.ts", "app/**/*.android.ts"],
+  "files": ["app/main.ts", "./references.d.ts", "app/polyfills.ts"],
   "exclude": ["node_modules", "platforms", "e2e"]
 }

@@ -62,11 +62,15 @@ android {
 }
 
 task createProguard {
+    def scriptPath = "$USER_PROJECT_ROOT/../shared/scripts/createProguard.js"
+    if (!file(scriptPath).exists()) {
+        scriptPath = "$USER_PROJECT_ROOT/../../shared/scripts/createProguard.js"
+    }
     dependsOn 'buildMetadata'
     doLast {
         exec {
             workingDir "$USER_PROJECT_ROOT"
-            commandLine 'node', '../shared/scripts/createProguard.js'
+            commandLine 'node', scriptPath
         }
     }
 }

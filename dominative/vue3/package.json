@@ -7,20 +7,20 @@
     "run.android.timeline": "ns run android --config=nativescript.config.timeline.js --release --clean --key-store-path ../../certs/upload.keystore --key-store-password nativescript --key-store-alias nativescript --key-store-alias-password nativescript --env.timeline"
   },
   "dependencies": {
-    "@akylas/nativescript": "^8.5.10",
+    "@akylas/nativescript": "8.6.2",
     "@dominative/vue": "0.0.6-alpha.1",
-    "@nativescript/core": "~8.5.9",
     "@nativescript/theme": "~3.0.2",
     "dominative": "0.0.9-alpha.2",
-    "undom-ng": "^1.0.10",
+    "undom-ng": "^1.1.1",
     "vue": "^3.3.4"
   },
   "devDependencies": {
-    "@nativescript/android": "8.5.1",
-    "@nativescript/types": "~8.5.0",
-    "@nativescript/webpack": "~5.0.17",
-    "@types/node": "~20.4.10",
-    "@vue/compiler-sfc": "^3.3.4",
+    "@nativescript/android": "8.6.2",
+    "@nativescript/core": "~8.6.2",
+    "@nativescript/types": "~8.6.1",
+    "@nativescript/webpack": "~5.0.18",
+    "@types/node": "~20.11.0",
+    "@vue/compiler-sfc": "^3.4.13",
     "merge-options": "^3.0.4",
     "merge-properties-files": "^1.1.6",
     "string-replace-loader": "^3.1.0",

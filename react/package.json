@@ -1,23 +1,23 @@
 {
   "name": "react",
-  "main": "src/app.ts",
+  "main": "app/app.ts",
   "version": "1.0.0",
   "private": true,
   "scripts": {
     "run.android.production": "ns run android --release --clean --key-store-path ../certs/upload.keystore --key-store-password nativescript --key-store-alias nativescript --key-store-alias-password nativescript --env.noconsole",
-    "run.android.timeline": "ns run android --config=nativescript.config.timeline.js --release --clean --key-store-path ../certs/upload.keystore --key-store-password nativescript --key-store-alias nativescript --key-store-alias-password nativescript --env.timeline"
+    "run.android.timeline": "NS_LOGGING=1 NS_TIMELINE=1 ns run android --release --key-store-path ../certs/upload.keystore --key-store-password nativescript --key-store-alias nativescript --key-store-alias-password nativescript --env.timeline"
   },
   "dependencies": {
-    "@akylas/nativescript": "^8.5.10",
-    "@nativescript/core": "~8.5.9",
+    "@akylas/nativescript": "^8.6.2",
     "react": "^16.14.0",
     "react-nativescript": "^4.0.0",
     "react-nativescript-navigation": "^4.0.0"
   },
   "devDependencies": {
-    "@nativescript/android": "8.5.1",
-    "@nativescript/types": "~8.5.0",
-    "@nativescript/webpack": "~5.0.17",
+    "@nativescript/android": "8.6.2",
+    "@nativescript/core": "~8.6.2",
+    "@nativescript/types": "~8.6.1",
+    "@nativescript/webpack": "~5.0.18",
     "@types/react": "npm:types-react-without-jsx-intrinsics@^16.14.30",
     "merge-options": "^3.0.4",
     "merge-properties-files": "^1.1.6",

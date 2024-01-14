@@ -4,19 +4,19 @@
   "version": "1.0.0",
   "scripts": {
     "run.android.production": "ns run android --release --clean --key-store-path ../certs/upload.keystore --key-store-password nativescript --key-store-alias nativescript --key-store-alias-password nativescript --env.noconsole",
-    "run.android.timeline": "ns run android --config=nativescript.config.timeline.js --release --clean --key-store-path ../certs/upload.keystore --key-store-password nativescript --key-store-alias nativescript --key-store-alias-password nativescript --env.timeline"
+    "run.android.timeline": "NS_LOGGING=1 NS_TIMELINE=1 ns run android --release --key-store-path ../certs/upload.keystore --key-store-password nativescript --key-store-alias nativescript --key-store-alias-password nativescript --env.timeline"
   },
   "dependencies": {
-    "@akylas/nativescript": "^8.5.10",
-    "@nativescript/core": "~8.5.9",
+    "@akylas/nativescript": "8.6.2",
     "@nativescript/theme": "~3.0.2",
     "nativescript-vue": "~2.9.3"
   },
   "devDependencies": {
-    "@nativescript/android": "8.5.1",
-    "@nativescript/types": "~8.5.0",
-    "@nativescript/webpack": "~5.0.17",
-    "@types/node": "~20.4.10",
+    "@nativescript/android": "8.6.2",
+    "@nativescript/core": "~8.6.2",
+    "@nativescript/types": "~8.6.1",
+    "@nativescript/webpack": "~5.0.18",
+    "@types/node": "~20.11.0",
     "merge-options": "^3.0.4",
     "merge-properties-files": "^1.1.6",
     "nativescript-vue-template-compiler": "~2.9.3",
