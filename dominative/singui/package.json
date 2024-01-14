@@ -14,8 +14,8 @@
     "undom-ng": "^1.1.1"
   },
   "devDependencies": {
-    "@nativescript/core": "8.6.2",
     "@nativescript/android": "8.6.2",
+    "@nativescript/core": "8.6.2",
     "@nativescript/types": "~8.6.1",
     "@nativescript/webpack": "~5.0.18",
     "@types/node": "~20.11.0",
