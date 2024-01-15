@@ -135,7 +135,6 @@ module.exports = (env, config, dirname) => {
         'global.autoLoadPolyfills': false,
         __UI_USE_EXTERNAL_RENDERER__: true,
         __UI_USE_XML_PARSER__: false,
-        'global.__AUTO_REGISTER_UI_MODULES__': false,
         __DISABLE_CSS__: env.disablecss
     };
     Object.assign(config.plugins.find((p) => p.constructor.name === 'DefinePlugin').definitions, defines);

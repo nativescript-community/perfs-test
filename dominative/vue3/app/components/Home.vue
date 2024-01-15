@@ -1,5 +1,5 @@
 <script setup>
-  const disableCss = __DISABLE_CSS__
+  // const disableCss = __DISABLE_CSS__
   const text = `What is Lorem Ipsum?
 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 Why do we use it?
@@ -14,7 +14,7 @@ There are many variations of passages of Lorem Ipsum available, but the majority
 <template>
   <ScrollView>
     <WrapLayout>
-      <Label v-for="(n, index) in 2000" :key="index" :text="text[index]" :disableCss="disableCss"/>
+      <Label v-for="(n, index) in 2000" :key="index" :text="text[index]"/>
     </WrapLayout>
   </ScrollView>
 </template>

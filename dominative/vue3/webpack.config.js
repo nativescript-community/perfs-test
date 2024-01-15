@@ -21,7 +21,11 @@ module.exports = (env) => {
                 ...options,
                 isServerBuild: false,
                 compilerOptions: {
-                    isCustomElement: tag => dominativeElements.indexOf(tag) >= 0
+                    isCustomElement:(tag)=>{
+                        console.log('isCustomElement', tag);
+                        return  tag => dominativeElements.indexOf(tag) >= 0
+                    },
+                    hoistStatic: false,
                 }
             };
         });

@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "@nativescript-community/vue": "file:../../../dominative-vue",
+    "@nativescript-community/vue": "0.0.7",
     "@nativescript/core": "~8.6.0",
     "@nativescript/theme": "~3.0.2",
     "dominative": "^0.1.2",

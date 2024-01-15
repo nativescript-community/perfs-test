@@ -10,7 +10,6 @@ import { AbsoluteLayout, Button, FlexboxLayout, GridLayout, StackLayout, Trace }
 import { FrameElement, PageElement, registerElement, registerNativeViewElement } from 'svelte-native/dom';
 import CollectionViewViewElement from '@nativescript-community/ui-collectionview/svelte';
 import { Img } from '@nativescript-community/ui-image';
-import { GestureRootView } from '@nativescript-community/gesturehandler';
 import { init } from '@nativescript-community/text';
 import { Label } from '@nativescript-community/ui-label';
 import App from './App.svelte';
@@ -27,6 +26,5 @@ registerNativeViewElement('StackLayout', () => StackLayout);
 registerNativeViewElement('AbsoluteLayout', () => AbsoluteLayout);
 registerNativeViewElement('Button', () => Button);
 registerNativeViewElement('Label', () => Label);
-registerNativeViewElement('gesturerootview', () => GestureRootView);
 
 svelteNative(App as any, {});
