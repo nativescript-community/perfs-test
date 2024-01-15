@@ -1,0 +1,9 @@
+packages:
+ - angular
+ - vue
+ - react
+ - svelte
+ - core
+ - dominative/vue3
+ - dominative/singui
+ - dominative/solidjs"
