@@ -7,12 +7,9 @@
     "run.android.timeline": "NS_LOGGING=1 NS_TIMELINE=1 ns run android --release --key-store-path ../certs/upload.keystore --key-store-password nativescript --key-store-alias nativescript --key-store-alias-password nativescript --env.timeline"
   },
   "dependencies": {
-    "@akylas/nativescript": "8.6.2",
-    "@nativescript-community/ui-collectionview": "5.3.11",
-    "@nativescript-community/ui-collectionview-swipemenu": "5.3.11",
-    "@nativescript-community/ui-image": "4.3.27",
-    "@nativescript-community/ui-label": "1.3.9",
-    "nativescript-vue": "^3.0.0-rc.1"
+    "@akylas/nativescript": "8.6.3",
+    "@nativescript/theme": "~3.0.2",
+    "nativescript-vue": "~2.9.3"
   },
   "devDependencies": {
     "@nativescript/android": "8.6.2",
@@ -21,7 +18,10 @@
     "@nativescript/webpack": "~5.0.18",
     "@types/node": "~20.11.0",
     "merge-options": "^3.0.4",
+    "merge-properties-files": "^1.1.6",
+    "nativescript-vue-template-compiler": "~2.9.3",
     "string-replace-loader": "^3.1.0",
-    "typescript": "~5.3.3"
+    "typescript": "~4.8.4",
+    "vue": "~2.6.14"
   }
 }
