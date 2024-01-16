@@ -5,5 +5,8 @@
        "paths": {
             "nativescript-vue": ["./node_modules/nativescript-vue3"]
        }
-    }
+    },   
+     "include": [
+        "./vue",
+    ]
 }

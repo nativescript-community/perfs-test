@@ -1,6 +1,7 @@
 {
     "scripts": {
-        "fullclean": "rimraf --glob '**/node_modules' '**/package-lock.json' '**/pnpm-lock.yaml'"
+        "fullclean": "rimraf --glob '**/node_modules' '**/package-lock.json' '**/pnpm-lock.yaml'",
+        "clean:native": "rimraf --glob '**/hooks' '**/platforms'"
     },
     "devDependencies": {
         "@angular/animations": "~17.0.9",
@@ -68,6 +69,7 @@
     },
     "workspaces": [
         "./angular",
+        "./vue2",
         "./vue",
         "./react",
         "./svelte",
@@ -75,7 +77,5 @@
         "./dominative/vue3",
         "./dominative/singui",
         "./dominative/solidjs"
-    ],
-    "resolutions": {
-    }
+    ]
 }

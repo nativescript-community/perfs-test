@@ -1,6 +1,7 @@
 packages:
  - angular
  - vue
+ - vue2
  - react
  - svelte
  - core

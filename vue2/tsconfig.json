@@ -2,10 +2,10 @@
   "extends": "../tsconfig",
   "compilerOptions": {
     "strict": true,
-    "target": "es2020",
+    "target": "ES2020",
     "module": "esnext",
     "moduleResolution": "node",
-    "lib": ["esnext", "es2017", "dom"],
+    "lib": ["dom", "ESNext"],
     "sourceMap": true,
     "noEmitHelpers": true,
     "importHelpers": true,
@@ -15,18 +15,13 @@
       "@/*": ["app/*"],
       "@shared/*": ["../shared/*"]
     },
-    "typeRoots": [
-      "types"
-    ],
-    "types": [
-      "node"
-    ],
+    "typeRoots": ["types"],
+    "types": ["node"],
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "skipLibCheck": true,
-    "resolveJsonModule": true,
+    "skipLibCheck": true
   },
   "include": ["app", "types", "../shared/shims"],
   "exclude": ["node_modules", "platforms"]

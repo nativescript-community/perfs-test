@@ -1,10 +1,18 @@
-import Vue from 'nativescript-vue'
-import Home from './components/Home.vue'
+import { createApp, registerElement } from 'nativescript-vue';
+import App from './App.vue'
+import CollectionView from '@nativescript-community/ui-collectionview/vue3';
+import { Img } from '@nativescript-community/ui-image';
+import { GestureRootView } from '@nativescript-community/gesturehandler';
+import { Label } from '@nativescript-community/ui-label';
 
-console.log('__DISABLE_CSS__', __DISABLE_CSS__);
-// Prints Vue logs when --env.production is *NOT* set while building
-Vue.config.silent = true
 
-new Vue({
-  render: (h) => h(Home),
-}).$start()
+registerElement('Image', () => Img, { overwriteExisting: true });
+registerElement('gesturerootview', () => GestureRootView);
+registerElement('Label', () => Label, { overwriteExisting: true });
+
+//console.log('__DISABLE_CSS__', __DISABLE_CSS__);
+
+
+const app = createApp(App);
+app.use(CollectionView);
+app.start();
