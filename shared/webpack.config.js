@@ -6,7 +6,9 @@ const IgnoreNotFoundExportPlugin = require('./scripts/IgnoreNotFoundExportPlugin
 module.exports = (env, config, dirname) => {
     const platform = env && ((env.android && 'android') || (env.ios && 'ios'));
     console.log('env', env);
-
+    Object.assign(config.resolve.alias, {
+        '@shared': resolve(__dirname),
+    });
     let coreModulesPackageName = '@nativescript/core';
     if (env.usefork) {
         console.log('using Akylas fork');
