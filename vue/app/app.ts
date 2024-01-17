@@ -2,12 +2,10 @@ import { createApp, registerElement } from 'nativescript-vue';
 import App from './App.vue'
 import CollectionView from '@nativescript-community/ui-collectionview/vue3';
 import { Img } from '@nativescript-community/ui-image';
-import { GestureRootView } from '@nativescript-community/gesturehandler';
 import { Label } from '@nativescript-community/ui-label';
 
 
 registerElement('Image', () => Img, { overwriteExisting: true });
-registerElement('gesturerootview', () => GestureRootView);
 registerElement('Label', () => Label, { overwriteExisting: true });
 
 //console.log('__DISABLE_CSS__', __DISABLE_CSS__);

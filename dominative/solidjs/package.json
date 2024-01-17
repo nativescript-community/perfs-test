@@ -7,7 +7,7 @@
     "run.android.timeline": "ns run android --config=nativescript.config.timeline.js --release --clean --key-store-path ../../certs/upload.keystore --key-store-password nativescript --key-store-alias nativescript --key-store-alias-password nativescript --env.timeline"
   },
   "dependencies": {
-    "@akylas/nativescript": "8.6.3",
+    "@akylas/nativescript": "8.6.4",
     "@dominative/solid": "0.0.4-alpha.1",
     "@nativescript/theme": "~3.0.2",
     "dominative": "0.1.1",

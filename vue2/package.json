@@ -3,7 +3,7 @@
   "main": "app/app.ts",
   "version": "1.0.0",
   "dependencies": {
-    "@akylas/nativescript": "8.6.2",
+    "@akylas/nativescript": "8.6.4",
     "@nativescript-community/ui-collectionview": "5.3.11",
     "@nativescript-community/ui-collectionview-swipemenu": "5.3.11",
     "@nativescript-community/ui-image": "4.3.27",

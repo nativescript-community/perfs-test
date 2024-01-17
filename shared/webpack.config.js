@@ -23,20 +23,6 @@ module.exports = (env, config, dirname) => {
         });
         const nativescriptReplace = '(NativeScript[\\/]dist[\\/]packages[\\/]core|@nativescript/core)';
 
-        // config.plugins.push(
-        //     new webpack.NormalModuleReplacementPlugin(/accessibility$/, (resource) => {
-        //         if (resource.context.match(nativescriptReplace)) {
-        //             resource.request = '~/shims/accessibility';
-        //         }
-        //     })
-        // );
-        // config.plugins.push(
-        //     new webpack.NormalModuleReplacementPlugin(/action-bar$/, (resource) => {
-        //         if (resource.context.match(nativescriptReplace)) {
-        //             resource.request = '~/shims/action-bar';
-        //         }
-        //     })
-        // );
         if (!!env.production && !env.timeline) {
             console.log('removing N profiling');
             config.plugins.push(

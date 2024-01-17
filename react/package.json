@@ -8,7 +8,7 @@
     "run.android.timeline": "NS_LOGGING=1 NS_TIMELINE=1 ns run android --release --key-store-path ../certs/upload.keystore --key-store-password nativescript --key-store-alias nativescript --key-store-alias-password nativescript --env.timeline"
   },
   "dependencies": {
-    "@akylas/nativescript": "8.6.3",
+    "@akylas/nativescript": "8.6.4",
     "react": "^16.14.0",
     "react-nativescript": "^4.0.0",
     "react-nativescript-navigation": "^4.0.0"

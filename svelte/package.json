@@ -7,7 +7,7 @@
     "run.android.timeline": "NS_LOGGING=1 NS_TIMELINE=1 ns run android --release --key-store-path ../certs/upload.keystore --key-store-password nativescript --key-store-alias nativescript --key-store-alias-password nativescript --env.timeline"
   },
   "dependencies": {
-    "@akylas/nativescript": "8.6.3",
+    "@akylas/nativescript": "8.6.4",
     "@nativescript-community/ui-collectionview": "5.3.11",
     "@nativescript-community/ui-collectionview-swipemenu": "5.3.11",
     "@nativescript-community/ui-image": "4.3.27",
