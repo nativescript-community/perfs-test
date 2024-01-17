@@ -3,7 +3,6 @@ hooks
 platforms
 node_modules/
 
-certs
 /package-lock.json
 /report
 /times.html
