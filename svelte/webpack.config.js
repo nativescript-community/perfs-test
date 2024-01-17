@@ -1,4 +1,5 @@
 const nsWebpack = require('@nativescript/webpack');
+const webpack = require('webpack');
 module.exports = (env) => {
     nsWebpack.init(env);
     nsWebpack.chainWebpack((config, env) => {
@@ -30,6 +31,11 @@ module.exports = (env) => {
         return config;
     });
     const config = nsWebpack.resolveConfig();
+    config.plugins.unshift(
+        new webpack.ProvidePlugin({
+            svN: '~/svelteNamespace'
+        })
+    );
     require('../shared/webpack.config')(env, config, __dirname);
     return config;
 };
