@@ -2,6 +2,10 @@
   "name": "vue2",
   "main": "app/app.ts",
   "version": "1.0.0",
+  "scripts": {
+    "run.android.production": "ns run android --release --clean --key-store-path ../certs/upload.keystore --key-store-password nativescript --key-store-alias nativescript --key-store-alias-password nativescript --env.noconsole",
+    "run.android.timeline": "NS_LOGGING=1 NS_TIMELINE=1 ns run android --release --key-store-path ../certs/upload.keystore --key-store-password nativescript --key-store-alias nativescript --key-store-alias-password nativescript --env.timeline"
+  },
   "dependencies": {
     "@akylas/nativescript": "8.6.4",
     "@nativescript-community/ui-collectionview": "5.3.11",
