@@ -3,6 +3,7 @@
     "whitelist": [
     ],
     "blacklist": [
+        "androidx.appcompat.widget:AppCompatTextView",
         "org.nativescript.widgets:TabLayout*", 
         "org.nativescript.widgets:BottomNavigationBar*", 
         "org.ow2.asmdex*:*", 

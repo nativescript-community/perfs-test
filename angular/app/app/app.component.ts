@@ -10,8 +10,6 @@ const itemsData = require('@shared/assets/data.json');
 export class AppComponent {
   items: ObservableArray<any>;
   constructor(){
-    
-    this.items = new ObservableArray(itemsData.products);;
-    console.log("itesm:", this.items);
+    this.items = new ObservableArray(itemsData.products);
   }
 }

@@ -1,13 +1,15 @@
 const nsWebpack = require('@nativescript/webpack');
 const webpack = require('webpack');
 const TerserPlugin = require('terser-webpack-plugin');
-const { resolve } = require('path');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const { isAbsolute, relative, resolve } = require('path');
 const IgnoreNotFoundExportPlugin = require('./scripts/IgnoreNotFoundExportPlugin');
 module.exports = (env, config, dirname) => {
     const platform = env && ((env.android && 'android') || (env.ios && 'ios'));
+    const projectRoot = dirname;
     console.log('env', env);
     Object.assign(config.resolve.alias, {
-        '@shared': resolve(__dirname),
+        '@shared': resolve(__dirname)
     });
     let coreModulesPackageName = '@nativescript/core';
     if (env.usefork) {
@@ -21,7 +23,18 @@ module.exports = (env, config, dirname) => {
             '@nativescript/core': `${coreModulesPackageName}`,
             'tns-core-modules': `${coreModulesPackageName}`
         });
-        const nativescriptReplace = '(NativeScript[\\/]dist[\\/]packages[\\/]core|@nativescript/core)';
+        const nativescriptReplace = '(NativeScript[\\/]dist[\\/]packages[\\/]core|@nativescript/core|@akylas/nativescript)';
+
+        if (env.accessibility === false || env.accessibility === 0) {
+            console.log('removing N accessibility');
+            config.plugins.push(
+                new webpack.NormalModuleReplacementPlugin(/accessibility$/, (resource) => {
+                    if (resource.context.match(nativescriptReplace)) {
+                        resource.request = '@shared/shims/accessibility';
+                    }
+                })
+            );
+        }
 
         if (!!env.production && !env.timeline) {
             console.log('removing N profiling');
@@ -85,6 +98,19 @@ module.exports = (env, config, dirname) => {
         }
     }
 
+    if (env.report) {
+        // Generate report files for bundles content
+        config.plugins.push(
+            new BundleAnalyzerPlugin({
+                analyzerMode: 'static',
+                openAnalyzer: false,
+                generateStatsFile: true,
+                reportFilename: resolve(projectRoot, 'report', 'report.html'),
+                statsFilename: resolve(projectRoot, 'report', 'stats.json')
+            })
+        );
+    }
+
     config.optimization.minimize = env.production;
     config.optimization.minimizer = [
         new TerserPlugin({
@@ -139,6 +165,14 @@ module.exports = (env, config, dirname) => {
             cancelAnimationFrame: [require.resolve(polyfillsPath + '/animation-frame'), 'cancelAnimationFrame']
         })
     );
+    config.optimization.splitChunks.cacheGroups.defaultVendor.test = function (module) {
+        const absPath = module.resource;
+        if (absPath) {
+            const relativePath = relative(projectRoot, absPath);
+            return absPath.indexOf('node_modules') !== -1 || !relativePath || relativePath.startsWith('..') || isAbsolute(relativePath);
+        }
+        return false;
+    };
     config.plugins.push(new IgnoreNotFoundExportPlugin());
 
     config.plugins.push(new webpack.IgnorePlugin({ resourceRegExp: /reduce-css-calc$/ }));

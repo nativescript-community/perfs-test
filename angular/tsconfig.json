@@ -16,6 +16,6 @@
     }
   },
   "include": ["app/tests/**/*.ts", "app/**/*.ios.ts", "app/**/*.android.ts"],
-  "files": ["app/main.ts", "./references.d.ts", "app/polyfills.ts"],
+  "files": ["app/main.ts", "../shared/references.d.ts", "app/polyfills.ts"],
   "exclude": ["node_modules", "platforms", "e2e"]
 }
